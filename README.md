@@ -18,5 +18,13 @@ this cloned network is used to generate the targets, i.e, we use a different net
 In the implementation, I apply DQN to a simple cartpole game. The cartpole is a game where we have a pole attached by a joint to a cart that moves on a 
 friction-less track. The cart can move right and left on the track, the goal is to balance the pole on the cart.
 
+![poster](https://user-images.githubusercontent.com/49812606/152653378-2a81df8a-c8c8-429c-bfd7-5ceb8cfd90f3.jpg)
 
+The DQN implementation consists of 3 primary components, the gaming environment as mentioned above, the agent, and the replay buffer. 
+ 1. Replay-Memory: This block consists of 2 functions: a Memory function that stores experiences, and a Replay function that take a random sample of the stored experiences to be used as the training batch. 
+ 2. Agent: This block primarily consists of a deep neural network and  a policy. The function of the agent is to optimize the Qvalue prediction (target policy) using the network mentioned above and then chooses an action given the state via the policy.
 
+Results:
+
+![average_reward](https://user-images.githubusercontent.com/49812606/152653567-55b79c4b-32fd-4681-bcad-38e5008c0b57.png)
+![loss](https://user-images.githubusercontent.com/49812606/152653568-852e7646-1309-4fd4-84e4-1cc195d6892a.png)
